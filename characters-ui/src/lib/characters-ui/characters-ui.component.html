@@ -1,0 +1,17 @@
+<!-- characters-ui.component.html -->
+<lib-banner (addCharacter)="onAddCharacter()"
+            (loadMore)="loadMore()"></lib-banner>
+
+<lib-character-list #characterList></lib-character-list>
+
+
+@if (showModal) {
+  <div class="dialog-overlay">
+    <div class="dialog-content">
+      <lib-character-form
+        (formSubmit)="onFormSubmit()"
+        (cancelled)="onCancel()"
+      ></lib-character-form>
+    </div>
+  </div>
+}

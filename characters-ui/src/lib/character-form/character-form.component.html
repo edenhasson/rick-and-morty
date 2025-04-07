@@ -1,0 +1,54 @@
+<form [formGroup]="characterForm" (ngSubmit)="onSubmit()" class="character-form">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      placeholder="Character Name"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image URL</label>
+    <input
+      id="image"
+      type="text"
+      formControlName="image"
+      placeholder="Character Image URL"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="status">Status</label>
+    <input
+      id="status"
+      type="text"
+      formControlName="status"
+      placeholder="Character Status"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="species">Species</label>
+    <input
+      id="species"
+      type="text"
+      formControlName="species"
+      placeholder="Character Species"
+      class="form-control"
+    />
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" [disabled]="characterForm.invalid" class="btn btn-primary">
+      Submit
+    </button>
+    <button type="button" (click)="resetForm()" class="btn btn-secondary">
+      Cancel
+    </button>
+  </div>
+</form>

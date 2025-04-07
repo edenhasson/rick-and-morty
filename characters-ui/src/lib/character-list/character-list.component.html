@@ -1,0 +1,25 @@
+@if(charactersSignal(); as characters) {
+  <ul class="character-list">
+    @for(character of characters; track character.id){
+      <li >
+        <lib-character-card
+          [character]="character"
+          [isSelected]="selectedCharacterId() === character.id"
+          (selected)="selectCharacter($event)"
+          (delete)="deleteCharacter($event)"
+          (update)="updateCharacter($event)"
+          (cancelEdit)="cancelEdit($event)">
+        </lib-character-card>
+      </li>
+    }
+
+  </ul>
+}
+
+@else {
+  <ng-template>
+    <p>Loading characters...</p>
+  </ng-template>
+}
+
+

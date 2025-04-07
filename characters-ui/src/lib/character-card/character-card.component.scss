@@ -1,0 +1,167 @@
+.character-item {
+  width: 200px;
+  height: 300px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  margin: 10px;
+  perspective: 1000px;
+}
+
+.character-item-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  transform-origin: center center;
+}
+
+.character-item.flip .character-item-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: transform 0.6s ease;
+}
+
+.card-front img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card-back {
+  background: #f5f5f5;
+  padding: 10px;
+  transform: rotateY(180deg);
+  overflow: hidden;
+}
+
+.card-back form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-back label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.card-back input {
+  width: 100%;
+  padding: 6px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.card-back input:focus {
+  border-color: #007BFF;
+}
+
+.card-back .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.card-back .form-buttons button {
+  width: 48%;
+  padding: 6px 12px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-back .form-buttons button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+}
+
+.card-back .form-buttons button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.card-back .form-buttons button[type="button"] {
+  background-color: #ccc;
+  color: white;
+}
+
+.card-back .form-buttons button[type="button"]:hover {
+  background-color: #888;
+}
+
+@media (max-width: 768px) {
+  .character-item {
+    width: 180px;
+    height: 270px;
+  }
+
+  .card-back {
+    padding: 8px;
+  }
+
+  .card-back input {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .card-back .form-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-back .form-buttons button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-item {
+    width: 160px;
+    height: 240px;
+  }
+
+  .card-back {
+    padding: 6px;
+  }
+
+  .card-back input {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .card-back .form-buttons button {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}

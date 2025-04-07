@@ -1,0 +1,39 @@
+.character-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #282c34;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.character-banner h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-button {
+  background-color: #61dafb;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #21a1f1;
+}

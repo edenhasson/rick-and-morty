@@ -1,0 +1,16 @@
+{
+  "name": "characters-ui",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "characters-ui/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["libs/characters-ui/src/**/*.ts"]
+      }
+    }
+  }
+}

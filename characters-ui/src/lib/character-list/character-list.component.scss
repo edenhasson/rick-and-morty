@@ -1,0 +1,22 @@
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .character-list {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-list {
+    gap: 1rem;
+  }
+}
