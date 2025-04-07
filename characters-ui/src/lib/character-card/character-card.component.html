@@ -4,23 +4,18 @@
       <img [src]="character().image" alt="{{ character().name }}" />
       <h3>{{ character().name }}</h3>
       <p>{{ character().species }} - {{ character().status }}</p>
-      <button (click)="deleteCharacter(character().id); $event.stopPropagation()">Delete</button>
+      <button class="delete-btn" (click)="deleteCharacter(character().id); $event.stopPropagation()">Delete</button>
     </div>
-
     <div class="card-back" (click)="$event.stopPropagation()">
       <form (ngSubmit)="updateCharacter()">
         <label for="name-{{character().id}}">Name</label>
         <input [(ngModel)]="character().name" name="name-{{character().id}}" id="name-{{character().id}}" required />
-
         <label for="species-{{character().id}}">Species</label>
         <input [(ngModel)]="character().species" name="species-{{character().id}}" id="species-{{character().id}}" required />
-
         <label for="status-{{character().id}}">Status</label>
         <input [(ngModel)]="character().status" name="status-{{character().id}}" id="status-{{character().id}}" required />
-
         <label for="image-{{character().id}}">Image URL</label>
         <input [(ngModel)]="character().image" name="image-{{character().id}}" id="image-{{character().id}}" required />
-
         <div class="form-buttons">
           <button type="submit">Update</button>
           <button type="button" (click)="cancelEditCharacter()">Cancel</button>
